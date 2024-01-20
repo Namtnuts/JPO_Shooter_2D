@@ -1,0 +1,80 @@
+[
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Game.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Game.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Game.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Game.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Map.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Map.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Map.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Map.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Ray.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Ray.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Ray.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Ray.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Player.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Player.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Player.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Player.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Enemy.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Enemy.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Enemy.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Enemy.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Guard.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Guard.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Guard.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Guard.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Path.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Path.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Path.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Path.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Counterterrorist.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Counterterrorist.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Counterterrorist.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Counterterrorist.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Specialforce.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Specialforce.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Specialforce.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Specialforce.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Bullet.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Bullet.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Bullet.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Bullet.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\Star.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\Star.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/Star.cpp",
+  "output": "src/CMakeFiles/Classes.dir/Star.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/Classes.dir/includes_CXX.rsp -g -o CMakeFiles\\Classes.dir\\FinishStar.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\src\\FinishStar.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/src/FinishStar.cpp",
+  "output": "src/CMakeFiles/Classes.dir/FinishStar.cpp.obj"
+},
+{
+  "directory": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/examples",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DSFML_STATIC @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\main.cpp.obj -c \"C:\\Users\\glosu\\Coding stuff\\SFML\\JPO_Shooter_2D\\examples\\main.cpp\"",
+  "file": "C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/examples/main.cpp",
+  "output": "examples/CMakeFiles/main.dir/main.cpp.obj"
+}
+]

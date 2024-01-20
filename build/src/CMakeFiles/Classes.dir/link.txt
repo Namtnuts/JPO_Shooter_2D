@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libClasses.a CMakeFiles/Classes.dir/Game.cpp.obj CMakeFiles/Classes.dir/Map.cpp.obj CMakeFiles/Classes.dir/Ray.cpp.obj CMakeFiles/Classes.dir/Player.cpp.obj CMakeFiles/Classes.dir/Enemy.cpp.obj CMakeFiles/Classes.dir/Guard.cpp.obj CMakeFiles/Classes.dir/Path.cpp.obj CMakeFiles/Classes.dir/Counterterrorist.cpp.obj CMakeFiles/Classes.dir/Specialforce.cpp.obj CMakeFiles/Classes.dir/Bullet.cpp.obj CMakeFiles/Classes.dir/Star.cpp.obj CMakeFiles/Classes.dir/FinishStar.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libClasses.a

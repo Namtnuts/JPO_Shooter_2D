@@ -1,0 +1,10 @@
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/CMakeFiles/edit_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/CMakeFiles/rebuild_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/include/CMakeFiles/edit_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/include/CMakeFiles/rebuild_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src/CMakeFiles/Classes.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src/CMakeFiles/edit_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/examples/CMakeFiles/main.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/examples/CMakeFiles/edit_cache.dir
+C:/Users/glosu/Coding stuff/SFML/JPO_Shooter_2D/build/examples/CMakeFiles/rebuild_cache.dir
