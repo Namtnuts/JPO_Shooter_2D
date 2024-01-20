@@ -4,6 +4,7 @@ project(Shooter_2D)
 
 add_subdirectory(include)
 add_subdirectory(src)
+add_subdirectory(googletest)
 
 option(
     BUILD_EXAMPLES "Whether or not to build examples"
