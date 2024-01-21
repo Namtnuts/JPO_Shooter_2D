@@ -55,7 +55,7 @@ void Game::initEntities(){
     m_stars.push_back(std::make_unique<Star>(sf::Vector2f(475.f, 270.f)));
     m_stars.push_back(std::make_unique<Star>(sf::Vector2f(735.f, 370.f)));
 
-    m_finishStar = std::make_unique<FinishStar>(sf::Vector2f(385.f, 285.f));
+    m_finishStar = std::make_unique<FinishStar>(sf::Vector2f(360.f, 260.f));
 
     for(auto &guard : m_guards){
         m_enemies.push_back(std::move(guard));

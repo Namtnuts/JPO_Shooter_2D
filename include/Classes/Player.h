@@ -2,7 +2,6 @@
 
 #include <SFML/Graphics.hpp>
 #include "Classes/Ray.h"
-#include "Classes/Map.h"
 #include <vector>
 #include <limits>
 #include <math.h>

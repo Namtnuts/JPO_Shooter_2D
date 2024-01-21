@@ -21,7 +21,6 @@ public:
 
     std::vector<sf::Vector2f> getPoints();
     sf::Vector2f getDirection();
-    sf::Vector2f getOffsetPosition();
     sf::Vector2f getPosition();
     sf::FloatRect getBounds();
     float getHeight();
