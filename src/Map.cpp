@@ -1,6 +1,18 @@
 #include "Classes/Map.h"
 
+// Constructor and Destructor
 Map::Map(){
+    ///////////////////////////////////////////////////////////
+    // This is contructor of this class
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //	    sets all vertices of map
+    // REMARKS:
+    //      for future this might be better if use reading from file
+    //      TODO!!!
+
     m_walls.setPrimitiveType(sf::Lines);
     m_walls.resize(74);
     m_walls[0].position = sf::Vector2f(1.f, 1.f);
@@ -122,14 +134,34 @@ Map::~Map(){
 
 }
 
+// Accessors
+///////////////////////////////////////////////////////////
+// These functions access private variebles of class
+///////////////////////////////////////////////////////////
 sf::VertexArray Map::getWalls(){
     return m_walls;
 }
 
 void Map::update(){
-
+    ///////////////////////////////////////////////////////////
+    // This function currently does nothing (this function is for future)
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    // REMARKS:
+    //      maybe add more features to game
 }
 
 void Map::render(sf::RenderTarget& target){
+    ///////////////////////////////////////////////////////////
+    // This function renders all lines
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      target - object to render to
+    // OUTPUT:
+    //      lines are rendered
+    // REMARKS:
     target.draw(m_walls);
 }

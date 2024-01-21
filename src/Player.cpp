@@ -1,6 +1,16 @@
 #include "Classes/Player.h"
 
+// Private functions
 void Player::initVariables(){
+    ///////////////////////////////////////////////////////////
+    // This function initialize vairbales
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //		variables are initialized
+    // REMARKS:
+
     m_movementSpeed = 2.f;
     m_fov = 360.f;
     m_playerDirection = sf::Vector2f(0.f, -1.f);
@@ -10,23 +20,47 @@ void Player::initVariables(){
 }
 
 void Player::initShape(){
+    ///////////////////////////////////////////////////////////
+    // This function initialize shape 
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //
+    // REMARKS:
+
     m_shape.setFillColor(sf::Color::Green);
     m_shape.setRadius(10.f);
     m_shape.setPosition(50.f, 50.f);
 }
 
 void Player::initRays(){
+    ///////////////////////////////////////////////////////////
+    // This function initialize rays
+    ///////////////////////////////////////////////////////////
+
+    // Check if direction is lower than 0.f and multiply current offset by right value
     m_offset = (m_playerDirection.y < 0.f) ? m_offset * -1.f : m_offset * 1.f;
     float fov = m_fov * (M_PI / 180.f);
+
+    // Intialize rays regadring offset and fov
     for(float angle = m_offset - fov / 2; angle < m_offset + fov / 2; angle += 0.01f){
         m_rays.push_back(std::make_shared<Ray>(m_shape.getPosition(), sf::Vector2f(cos(angle), sin(angle)), sf::Color(255,255,255,0), 2000.f));
     }
 }
 
 void Player::initCrosshair(){
+    ///////////////////////////////////////////////////////////
+    // This function initialize crosshair 
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //
+    // REMARKS:
+
     m_crosshair = std::make_unique<Ray>(m_shape.getPosition(), sf::Vector2f(cos(m_offset), sin(m_offset)), sf::Color::White, 2000.f);
 }
 
+// Constructor and destructor
 Player::Player(){
     this->initVariables();
     this->initShape();
@@ -38,10 +72,18 @@ Player::~Player(){
 
 }
 
+// Modifires
+///////////////////////////////////////////////////////////
+// These functions modify private variebles of class
+///////////////////////////////////////////////////////////
 void Player::setPosition(sf::Vector2f position){
     m_shape.setPosition(position);
 }
 
+// Accessors
+///////////////////////////////////////////////////////////
+// These functions access private variebles of class
+///////////////////////////////////////////////////////////
 sf::Vector2f Player::getPosition(){
     return m_shape.getPosition();
 }
@@ -63,16 +105,26 @@ std::vector<std::shared_ptr<Ray>> Player::getRays(){
 }
 
 bool Player::checkPlayerMapIntersect(sf::Vector2f moveDirection){
-    //function takes move direction as parameter e.g (1.f, 0.f) which means player is moving in right direction
-    //it iterates through all rays and checks if length of current ray is lower than 10.f (radius of player)
-    //then it gets ray direction from current ray and checks which axis ray is closer to (X or Y)
-    //and then it replace ray direction for exact direction -> this operation is needed because when function had been tested 
-    //ray direction were for e.g (-0.8823, 0.5322) which had to be converted to (-1.f, 0.f) to check with move direction
-    //this operation goes like this: check if abs(x) > abs(y) if so ray direction: x value(if >0 then ceil else floor) , y value(0.f)
-    //and if not ray direction: x value(0.f) , y value(if >0 then ceil else floor)
-    //after this operation function is checking if this exact ray directions match move direction if so that means player is intersecting with map
-    //and function returns true
-    //if none of above if statements were true loop ends which means player isn't intersecting with map so function returns false
+    ///////////////////////////////////////////////////////////
+    // This function checks in player is intersecting with map
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      movedirection - direction of movement
+    // OUTPUT:
+    //		boolean
+    // REMARKS:
+    //      this function was buggy so here is basic explanation
+    //      function takes move direction as parameter e.g (1.f, 0.f) which means player is moving in right direction
+    //      it iterates through all rays and checks if length of current ray is lower than 10.f (radius of player)
+    //      then it gets ray direction from current ray and checks which axis ray is closer to (X or Y)
+    //      and then it replace ray direction for exact direction -> this operation is needed because when function had been tested 
+    //      ray direction were for e.g (-0.8823, 0.5322) which had to be converted to (-1.f, 0.f) to check with move direction
+    //      this operation goes like this: check if abs(x) > abs(y) if so ray direction: x value(if >0 then ceil else floor) , y value(0.f)
+    //      and if not ray direction: x value(0.f) , y value(if >0 then ceil else floor)
+    //      this operation function is checking if this exact ray directions match move direction if so that means player is intersecting with map
+    //      and function returns true
+    //      if none of above if statements were true loop ends which means player isn't intersecting with map so function returns false
 
     for(auto &ray : m_rays){
         //check if ray length is lower than 10.f
@@ -101,6 +153,15 @@ bool Player::checkPlayerMapIntersect(sf::Vector2f moveDirection){
 }
 
 const bool Player::canshoot(){
+    ///////////////////////////////////////////////////////////
+    // This function checks if player can shoot
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //		boolean
+    // REMARKS:
+
     if(m_shootCooldown >= m_shootCooldownMax){
         m_shootCooldown = 0.f;
         return true;
@@ -109,7 +170,14 @@ const bool Player::canshoot(){
 }
 
 void Player::updateInput(){
-    //updates input if WSAD keys are pressed and checks if player is intersecting with map
+    ///////////////////////////////////////////////////////////
+    // This function updates input if WSAD keys are pressed and checks if player is intersecting with map
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //		input is handled (WSAD)
+    // REMARKS:
 
     //up
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){
@@ -130,6 +198,17 @@ void Player::updateInput(){
 }
 
 void Player::updateRays(sf::VertexArray& walls, sf::Vector2i mousePosition){
+    ///////////////////////////////////////////////////////////
+    // This function updates rays
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      walls - lines (two vertices) representing walls
+    //      mousePosition - mouse position (x,y)
+    // OUTPUT:
+    //		rays are updated
+    // REMARKS:
+
     //get player's position and adjust it that is middle of circle not top left corner of the circle
     sf::Vector2f playerPosition = m_shape.getPosition() + sf::Vector2f(m_shape.getRadius(), m_shape.getRadius());
 
@@ -156,11 +235,29 @@ void Player::updateRays(sf::VertexArray& walls, sf::Vector2i mousePosition){
 }
 
 void Player::updateShoot(){
+    ///////////////////////////////////////////////////////////
+    // This function updates cooldown for shooting
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //		cooldown of shooting is updated
+    // REMARKS:
+
     if(m_shootCooldown < m_shootCooldownMax)
         m_shootCooldown += 0.5f;
 }
 
 void Player::update(sf::VertexArray& walls, sf::Vector2i mousePosition){
+    ///////////////////////////////////////////////////////////
+    // This function updates player
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //		player is updated
+    // REMARKS:
+
     this->updateInput();
     this->updateRays(walls, mousePosition);
     this->updateShoot();
@@ -168,6 +265,16 @@ void Player::update(sf::VertexArray& walls, sf::Vector2i mousePosition){
 }
 
 void Player::renderRays(sf::RenderTarget& target){
+    ///////////////////////////////////////////////////////////
+    // This function renders rays
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      target - object to render to
+    // OUTPUT:
+    //		rays are rendered)
+    // REMARKS:
+
     //render all rays
     for (auto &ray : m_rays){
         ray->render(target);
@@ -178,6 +285,16 @@ void Player::renderRays(sf::RenderTarget& target){
 }
 
 void Player::render(sf::RenderTarget& target){
+    ///////////////////////////////////////////////////////////
+    // This function renders shape and calls renderRays
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      target - object to render to
+    // OUTPUT:
+    //		shape is rendered
+    // REMARKS:
+
     this->renderRays(target);
     target.draw(m_shape);
 }

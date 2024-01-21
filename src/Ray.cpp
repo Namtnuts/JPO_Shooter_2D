@@ -1,6 +1,20 @@
 #include "Classes/Ray.h"
 
+//Private functions
 void Ray::initVariables(sf::Vector2f startPoint, sf::Vector2f direction, sf::Color color, float length){
+    ///////////////////////////////////////////////////////////
+    // This function initialize variables
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      startPoint - starting point (x, y)
+    //      direction - direction of ray (x,y)
+    //      color - color of line (ray)
+    //      length - length of line (ray)
+    // OUTPUT:
+    //      variables are initialized
+    // REMARKS:
+
     m_startPoint = startPoint;
     m_direction = direction;
     m_defaultRayLength = length;
@@ -12,6 +26,7 @@ void Ray::initVariables(sf::Vector2f startPoint, sf::Vector2f direction, sf::Col
     m_ray[1].color = color;
 }
 
+//Constructor and destructor
 Ray::Ray(sf::Vector2f startPoint, sf::Vector2f direction, sf::Color color, float length){
     this->initVariables(startPoint, direction, color, length);
 }
@@ -20,6 +35,18 @@ Ray::~Ray(){
 
 }
 
+// Modifires
+///////////////////////////////////////////////////////////
+// These functions modify private variebles of class
+///////////////////////////////////////////////////////////
+void Ray::setRayLength(float length){
+    m_rayLength = length;
+}
+
+// Accessors
+///////////////////////////////////////////////////////////
+// These functions access private variebles of class
+///////////////////////////////////////////////////////////
 sf::Vertex Ray::getRay(){
     return m_ray[2];
 }
@@ -40,17 +67,37 @@ sf::Vector2f Ray::getDirection(){
     return m_direction;
 }
 
-void Ray::setRayLength(float length){
-    m_rayLength = length;
-}
+
 
 void Ray::rotate(float angle){
+    ///////////////////////////////////////////////////////////
+    // This function rotates ray by given angle
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      angle - angle by which ray is to be rotated
+    // OUTPUT:
+    //	    ray is rotated
+    // REMARKS:
+
     float newX = m_direction.x * cos(angle) - m_direction.y * sin(angle);
     float newY = m_direction.x * sin(angle) + m_direction.y * cos(angle); 
     m_direction = sf::Vector2f(newX, newY);
 }
 
 void Ray::collisionWalls(sf::VertexArray& walls){
+    ///////////////////////////////////////////////////////////
+    // This function checks if ray is intersecting with walls
+    // and updates its length if so
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      walls - lines (two vertices) representing walls
+    // OUTPUT:
+    //	    ray length is/is not updated
+    // REMARKS:
+    //      source: wikipedia
+
     int numberOfWalls = walls.getVertexCount();
     for (size_t i = 0; i < numberOfWalls; i++){
         if(i%2==0) continue;
@@ -93,6 +140,18 @@ void Ray::collisionWalls(sf::VertexArray& walls){
 }
 
 void Ray::update(sf::VertexArray& walls, sf::Vector2f playerPosition, float angle){
+    ///////////////////////////////////////////////////////////
+    // This function updates rays
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      walls - lines (two vertices) representing walls
+    //      playerposition - point (x,y) where player's shape is
+    //      angle - angle by which ray is to be rotated
+    // OUTPUT:
+    //	    updates position and length of ray(if needed)
+    // REMARKS:
+
     //set begin of the ray (m_startPoint) to player's position
     m_startPoint = playerPosition;
 
@@ -114,5 +173,15 @@ void Ray::update(sf::VertexArray& walls, sf::Vector2f playerPosition, float angl
 }
 
 void Ray::render(sf::RenderTarget& target){
+    ///////////////////////////////////////////////////////////
+    // This function renders ray
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      target - object to render to
+    // OUTPUT:
+    //	    ray is rendered
+    // REMARKS:
+    
     target.draw(m_ray, 2, sf::Lines);
 }

@@ -1,10 +1,30 @@
 #include "Classes/Path.h"
 
 void Path::initVariables(int type){
+    ///////////////////////////////////////////////////////////
+    // This function initialize variables
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    //      type = type of path (look Path.h)
+    // OUTPUT:
+    //      variables are initialized
+    // REMARKS:
     m_type = type;
 }
 
 void Path::initPath(){
+    ///////////////////////////////////////////////////////////
+    // This function initialize path based of type
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //      path is intialized
+    // REMARKS:
+    //      this might to be done by reading from file
+    //      TODO!!!
+
     switch (m_type)
     {
     case GUARD_1:
@@ -136,6 +156,7 @@ void Path::initPath(){
     }
 }
 
+// Constructor and Destructor
 Path::Path(int type){
     this->initVariables(type);
     this->initPath();
@@ -145,6 +166,10 @@ Path::~Path(){
 
 }
 
+// Accessors
+///////////////////////////////////////////////////////////
+// These functions access private variebles of class
+///////////////////////////////////////////////////////////
 sf::Vector2f Path::getStartPosition(){
     return m_startPosition;
 }
@@ -169,7 +194,18 @@ int Path::getMovingTo(){
     return m_movingTo;
 }
 
+// Functions
 void Path::changeNextVertex(){
+    ///////////////////////////////////////////////////////////
+    // This function change variable movingTo
+    ///////////////////////////////////////////////////////////
+    //		
+    // INPUT:
+    // OUTPUT:
+    //      if movingTo is't last element in vector increment
+    //      if it is reset to beginning of vector
+    // REMARKS:
+    
     auto it = std::find(m_movingOrder.begin(), m_movingOrder.end(), m_movingTo); 
   
     if (it != m_movingOrder.end()){ 
